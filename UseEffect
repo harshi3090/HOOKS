@@ -1,0 +1,20 @@
+//useEffect runs on every render. That means that when the count changes, a render happens, which then triggers another effect.
+//It is called Each time  component Renders
+//useEffect accepts two arguments. The second argument is optional.
+
+useEffect(<function>, <dependency>)
+
+import { useState, useEffect } from "react";
+function App() {
+  const [count, setCount] = useState(0);
+
+  useEffect(() => {
+    setTimeout(() => {
+      setCount(count + 1);
+    }, 1000);
+  },[count]);
+
+  return <h1>I've rendered {count} times!</h1>;
+}
+
+export  default App;
