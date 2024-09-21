@@ -1,0 +1,35 @@
+//Persistent Value: The value stored in useRef persists for the full lifetime of the component. It doesn’t get reset on re-renders.
+
+No Re-Renders: Changing the value of a useRef does not trigger a re-render of the component. This is useful for storing values that don’t require the UI to update immediately.
+
+Accessing DOM Elements: useRef can be used to directly access and manipulate DOM elements.
+
+
+
+
+
+
+
+
+
+
+import React, { useRef } from 'react';
+
+function Counter() {
+  const countRef = useRef(0); // useRef to store the counter value
+
+  const handleIncrement = () => {
+    countRef.current += 1; // Increment the count stored in ref
+    console.log("Current count:", countRef.current);
+  };
+
+  return (
+    <div>
+      <h1>Counter with useRef</h1>
+      <p>Current count (won't re-render): {countRef.current}</p>
+      <button onClick={handleIncrement}>Increment</button>
+    </div>
+  );
+}
+
+export default Counter;
