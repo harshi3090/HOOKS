@@ -1,0 +1,22 @@
+//UseState is a hook which is used for stateMangement
+//Array Syntax: The useState hook returns an array containing two elements:
+//The current state value.
+//A function to update that state
+
+
+
+import React, { useState } from 'react';
+function App() {
+  const [name,setName]=useState("");
+   const result=(e)=>{
+    setName(e.target.value)
+   }
+  return (
+    <div>
+    <input type='text' value={name}  onChange={result}/>
+    <h3>{name}</h3>
+    </div>
+  );
+}
+
+export  default App;
